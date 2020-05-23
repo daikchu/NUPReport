@@ -30,21 +30,19 @@ public class SPKPaymentMasterDAOimpl implements SPKPaymentMasterDAO{
 	  //Truy vấn cho bảng 1
 	@Override
 	public List<SPKreportView> findAll(String code, String startdate, String endDate) {
-		String dk="";
+		String dkPolyCode="";
+		String dkTime = "";
 		if(!StringUtils.isBlank(code)){
-			dk=dk+" AND a.PolyCode = '"+code+"'";
+			dkPolyCode=" where bangchinh.InstitutionCodeName = '"+code+"'";
 		}
 		if(!StringUtils.isBlank(startdate)){
-			dk=dk+" AND a.ReceiveTime >= '"+ startdate+"'";
+			dkTime=dkTime+" AND a.ReceiveTime >= '"+ startdate+"'";
 		}
 		if(!StringUtils.isBlank(endDate)){
-			dk=dk+" AND a.ReceiveTime <= '"+ endDate+"'";
+			dkTime=dkTime+" AND a.ReceiveTime <= '"+ endDate+"'";
 		}
 		// TODO Auto-generated method stub
-      String sql="\n" +
-			  "\n" +
-			  "\n" +
-			  "select bangchinh.InstitutionCodeName as codename,bangchinh.InstitutionName as Polyclinic,(case  when bangmau.NETSDebit is null then 0 else bangmau.NETSDebit end) as netdebit,\n" +
+      String sql="select bangchinh.InstitutionCodeName as codename,bangchinh.InstitutionName as Polyclinic,(case  when bangmau.NETSDebit is null then 0 else bangmau.NETSDebit end) as netdebit,\n" +
 			  "(case  when bangmau2.NETSDebit is null then 0 else bangmau2.NETSDebit end) as netcc,(case  when bangmau3.NETSDebit is null then 0 else bangmau3.NETSDebit end) as netcda,(case  when bangmau4.NETSDebit is null then 0 else bangmau4.NETSDebit end) as creditcard,(case  when bangmau5.NETSDebit is null then 0 else bangmau.NETSDebit end) as cash, (case  when bangmau.NETSDebit is null then 0 else bangmau.NETSDebit end)\n" +
 			  "+(case  when bangmau2.NETSDebit is null then 0 else bangmau2.NETSDebit end)+(case  when bangmau3.NETSDebit is null then 0 else bangmau3.NETSDebit end)+(case  when bangmau4.NETSDebit is null then 0 else bangmau4.NETSDebit end)+(case  when bangmau5.NETSDebit is null then 0 else bangmau5.NETSDebit end)\n" +
 			  "\n" +
@@ -59,33 +57,32 @@ public class SPKPaymentMasterDAOimpl implements SPKPaymentMasterDAO{
 			  "from \n" +
 			  "[dbo].[SPKPaymentInfo] c inner join \n" +
 			  "[dbo].[SPKPaymentMode] d on c.[PaymentCategoryID]=d.[PaymentCategoryID] \n" +
-			  "where [PaymentModeID]=3 and c.[PaymentCategoryID]=2 \n" + dk+
-			  " group by [PaymentInfoID],[PaymentModeID],c.[PaymentCategoryID]) as b where a.PaymentInfoID=b.PaymentInfoID group by a.PolyCode) bang)bangmau on bangmau.PolyCode=bangchinh.InstitutionCodeName \n" +
+			  "where [PaymentModeID]=3 and c.[PaymentCategoryID]=2 \n" +
+			  " group by [PaymentInfoID],[PaymentModeID],c.[PaymentCategoryID]) as b where a.PaymentInfoID=b.PaymentInfoID "+dkTime+" group by a.PolyCode) bang)bangmau on bangmau.PolyCode=bangchinh.InstitutionCodeName \n" +
 			  " LEFT JOIN (select bang.PolyCode,bang.[NETSDebit],bang.count from (select a.PolyCode,SUM(b.[NETSDebit]) as 'NETSDebit',count(b.[NETSDebit]) as count from SPKPaymentMaster a,(select [PaymentInfoID],[PaymentModeID],c.[PaymentCategoryID],SUM(c.AmountPaid) as 'NETSDebit' \n" +
 			  "from \n" +
 			  "[dbo].[SPKPaymentInfo] c inner join \n" +
 			  "[dbo].[SPKPaymentMode] d on c.[PaymentCategoryID]=d.[PaymentCategoryID] \n" +
-			  "where ([PaymentModeID]=4 OR [PaymentModeID]=12) and c.[PaymentCategoryID]=2\n" +dk+
-			  " group by [PaymentInfoID],[PaymentModeID],c.[PaymentCategoryID]) as b where a.PaymentInfoID=b.PaymentInfoID group by a.PolyCode) bang)bangmau2 on bangmau2.PolyCode=bangchinh.InstitutionCodeName\n" +
+			  "where ([PaymentModeID]=4 OR [PaymentModeID]=12) and c.[PaymentCategoryID]=2\n" +
+			  " group by [PaymentInfoID],[PaymentModeID],c.[PaymentCategoryID]) as b where a.PaymentInfoID=b.PaymentInfoID "+dkTime+" group by a.PolyCode) bang)bangmau2 on bangmau2.PolyCode=bangchinh.InstitutionCodeName\n" +
 			  " LEFT JOIN (select bang.PolyCode,bang.[NETSDebit],bang.count as count from (select a.PolyCode,SUM(b.[NETSDebit]) as 'NETSDebit',count(b.[NETSDebit]) as count   from SPKPaymentMaster a,(select [PaymentInfoID],[PaymentModeID],c.[PaymentCategoryID],SUM(c.AmountPaid) as 'NETSDebit' \n" +
 			  "from \n" +
 			  "[dbo].[SPKPaymentInfo] c inner join \n" +
 			  "[dbo].[SPKPaymentMode] d on c.[PaymentCategoryID]=d.[PaymentCategoryID] \n" +
-			  "where ([PaymentModeID]=13) and c.[PaymentCategoryID]=2\n" +dk+
-			  " group by [PaymentInfoID],[PaymentModeID],c.[PaymentCategoryID]) as b where a.PaymentInfoID=b.PaymentInfoID group by a.PolyCode) bang)bangmau3 on bangmau3.PolyCode=bangchinh.InstitutionCodeName\n" +
+			  "where ([PaymentModeID]=13) and c.[PaymentCategoryID]=2\n" +
+			  " group by [PaymentInfoID],[PaymentModeID],c.[PaymentCategoryID]) as b where a.PaymentInfoID=b.PaymentInfoID "+dkTime+" group by a.PolyCode) bang)bangmau3 on bangmau3.PolyCode=bangchinh.InstitutionCodeName\n" +
 			  " LEFT JOIN (select bang.PolyCode,bang.[NETSDebit],bang.count from (select a.PolyCode,SUM(b.[NETSDebit]) as 'NETSDebit',count(b.[NETSDebit]) as count  from SPKPaymentMaster a,(select [PaymentInfoID],[PaymentModeID],c.[PaymentCategoryID],SUM(c.AmountPaid) as 'NETSDebit' \n" +
 			  "from \n" +
 			  "[dbo].[SPKPaymentInfo] c inner join \n" +
-			  "[dbo].[SPKPaymentMode] d on c.[PaymentCategoryID]=d.[PaymentCategoryID] \n" +dk+
+			  "[dbo].[SPKPaymentMode] d on c.[PaymentCategoryID]=d.[PaymentCategoryID] \n" +
 			  "where c.[PaymentCategoryID]=1\n" +
-			  " group by [PaymentInfoID],[PaymentModeID],c.[PaymentCategoryID]) as b where a.PaymentInfoID=b.PaymentInfoID group by a.PolyCode) bang)bangmau4 on bangmau4.PolyCode=bangchinh.InstitutionCodeName\n" +
+			  " group by [PaymentInfoID],[PaymentModeID],c.[PaymentCategoryID]) as b where a.PaymentInfoID=b.PaymentInfoID "+dkTime+" group by a.PolyCode) bang)bangmau4 on bangmau4.PolyCode=bangchinh.InstitutionCodeName\n" +
 			  " LEFT JOIN (select bang.PolyCode,bang.[NETSDebit],bang.count from (select a.PolyCode,SUM(b.[NETSDebit]) as 'NETSDebit',count(b.[NETSDebit]) as count  from SPKPaymentMaster a,(select [PaymentInfoID],[PaymentModeID],c.[PaymentCategoryID],SUM(c.AmountPaid) as 'NETSDebit' \n" +
 			  "from \n" +
 			  "[dbo].[SPKPaymentInfo] c inner join \n" +
-			  "[dbo].[SPKPaymentMode] d on c.[PaymentCategoryID]=d.[PaymentCategoryID] \n" +dk+
+			  "[dbo].[SPKPaymentMode] d on c.[PaymentCategoryID]=d.[PaymentCategoryID] \n" +
 			  "where c.[PaymentCategoryID]=13\n" +
-			  " group by [PaymentInfoID],[PaymentModeID],c.[PaymentCategoryID]) as b where a.PaymentInfoID=b.PaymentInfoID group by a.PolyCode) bang)bangmau5 on bangmau5.PolyCode=bangchinh.InstitutionCodeName\n" +
-			  "\n"+dk;
+			  " group by [PaymentInfoID],[PaymentModeID],c.[PaymentCategoryID]) as b where a.PaymentInfoID=b.PaymentInfoID group by a.PolyCode) bang)bangmau5 on bangmau5.PolyCode=bangchinh.InstitutionCodeName \n"+dkPolyCode;
       List<SPKreportView> lts=new ArrayList<SPKreportView>();
       lts=entityManager.createNativeQuery(sql,SPKreportView.class).getResultList();
       return lts;

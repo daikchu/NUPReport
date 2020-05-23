@@ -37,7 +37,7 @@
                                         <label class="control-label text-dark">Polyclinic</label>
                                     </div>
                                     <div class="col-md-8">
-                                        <select class="form-control select2"
+                                        <select id="polyclinic" class="form-control select2"
                                                 ng-model="searchCondition.polyclinic">
                                             <option value="">--Select all--</option>
                                             <option ng-repeat="item in polyclinics" value="{{item.institutionCodeName}}">{{item.institutionName}}</option>

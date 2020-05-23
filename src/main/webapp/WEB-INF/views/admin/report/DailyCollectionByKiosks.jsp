@@ -176,7 +176,6 @@
                                 <td class="align-center truong-text-verticel">{{item.ezLinkCount}}</td>
                                 <td class="align-center truong-text-verticel">{{item.creditCardCount}}</td>
                                 <td class="align-center truong-text-verticel">{{item.cashCount}}</td>
-                                <td class="align-center truong-text-verticel">{{item.cashCount}}</td>
                                 <td class="align-center truong-text-verticel">{{item.totalCount}}</td>
 
                             </tr>

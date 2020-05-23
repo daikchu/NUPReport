@@ -16,10 +16,8 @@ public class SPKreportView {
     @Column(name="netdebit")
     private BigDecimal netdebit;
     @Column(name="netcc")
-
     private BigDecimal netcc;
     @Column(name="netcda")
-
     private BigDecimal netcda;
     @Column(name="creditcard")
 

@@ -55,11 +55,11 @@ app.controller('DailyCollectionByPolyclinicController', ['$scope', '$http', '$q'
 
 
     $scope.export = function () {
-        window.location.href = preUrl + "/statistic/task/export?taskCode=" + $scope.searchCondition.code + "&taskName=" + $scope.searchCondition.name
-            + "&taskStatus=" + $scope.searchCondition.status + "&resultEvaluation=" + $scope.searchCondition.resultEvaluation
-            + "&assignDateFrom=" + $scope.searchCondition.assignDateFrom + "&assignDateTo=" + $scope.searchCondition.assignDateTo
-            + "&endDateFrom=" + $scope.searchCondition.endDateFrom + "&endDateTo=" + $scope.searchCondition.endDateTo
-            + "&levelJoin=" + $scope.searchCondition.levelJoin;
+        var polyclinicName = $( "#polyclinic option:selected" ).text();
+        $scope.searchCondition.dateFrom = $('#dateFrom').val();
+        $scope.searchCondition.dateTo = $('#dateTo').val();
+        window.location.href = preUrl + "/report/export-DailyCollectionByPolyclinic?polyclinic=" + $scope.searchCondition.polyclinic
+            + "&dateFrom=" + $scope.searchCondition.dateFrom + "&dateTo=" + $scope.searchCondition.dateTo + "&polyclinicName="+polyclinicName
     };
 
 
