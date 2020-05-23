@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>368426349110-d7hrpt8nlf32u5kdt1mcggol8tfnqs9h.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.368426349110-d7hrpt8nlf32u5kdt1mcggol8tfnqs9h</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>368426349110-0ulkc7i95u7ep52ur7i8tdg5nsn5b2rf.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB05LDLA2-FBKPAhDxdbsrCLhLZvCWvXi0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>368426349110</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.freelauncer.ism</string>
+	<key>PROJECT_ID</key>
+	<string>ism-danang</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ism-danang.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:368426349110:ios:2f615c39fcb3e9976f1e97</string>
+	<key>DATABASE_URL</key>
+	<string>https://ism-danang.firebaseio.com</string>
+</dict>
+</plist>

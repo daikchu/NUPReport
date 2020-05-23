@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <!--Cac trang danh cho admin-->
+
+    <definition name="adm_default" template="/WEB-INF/views/admin/layout/layout.jsp">
+        <put-attribute name="title" value="Home" />
+        <put-attribute name="header" value="/WEB-INF/views/admin/layout/header.jsp" />
+        <put-attribute name="leftpanel" value="/WEB-INF/views/admin/layout/leftpanel.jsp" />
+        <put-attribute name="page" value="/WEB-INF/views/admin/layout/blank.jsp" />
+        <!--<put-attribute name="footer" value="/WEB-INF/views/admin/layout/footer.jsp" />-->
+    </definition>
+
+    <definition name="adm_index" extends="adm_default">
+        <put-attribute name="title" value="He thong quan ly mang xa hoi TP Da Nang"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/index.jsp" />
+    </definition>
+
+    <definition name="adm_login" template="/WEB-INF/views/admin/login.jsp">
+    </definition>
+
+    <definition name="forgot_password" template="/WEB-INF/views/admin/forgotPassword.jsp">
+    </definition>
+
+    <definition name="404" template="/WEB-INF/views/admin/404.jsp">
+    </definition>
+    <definition name="403" template="/WEB-INF/views/admin/403.jsp">
+    </definition>
+
+    <definition name="adm_dashboard" extends="adm_default">
+        <put-attribute name="title" value="He thong quan ly mang xa hoi TP Da Nang"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/dashboard/dashboard.jsp" />
+    </definition>
+    <!--MANAGER-->
+    <!--package-->
+    <!--SYSTEM-->
+    <definition name="adm_user.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách người dùng"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/user/list.jsp" />
+    </definition>
+    <definition name="adm_user.add" extends="adm_default">
+        <put-attribute name="title" value="Thêm mới người dùng"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/user/add.jsp" />
+    </definition>
+    <definition name="adm_user.detail" extends="adm_default">
+        <put-attribute name="title" value="Chi tiết người dùng"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/user/detail.jsp" />
+    </definition>
+    <definition name="adm_user.edit" extends="adm_default">
+        <put-attribute name="title" value="Sửa người dùng"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/user/edit.jsp" />
+    </definition>
+    <definition name="adm_user.group" extends="adm_default">
+        <put-attribute name="title" value="Sửa người dùng"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/user/user.group.jsp" />
+    </definition>
+    <definition name="adm_user.change.pass" extends="adm_default">
+        <put-attribute name="title" value="Đổi mật khẩu"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/user/change.my.pass.jsp" />
+    </definition>
+
+    <definition name="adm_user.userInfo" extends="adm_default">
+        <put-attribute name="title" value="Thông tin cá nhân"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/user/userInfo.jsp" />
+    </definition>
+
+
+    <!--Quản lý đơn vị-->
+    <definition name="unit.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách đơn vị"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/unit/list.jsp" />
+    </definition>
+    <definition name="unit.add" extends="adm_default">
+        <put-attribute name="title" value="Thêm mới đơn vị"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/unit/add.jsp" />
+    </definition>
+    <definition name="unit.detail" extends="adm_default">
+        <put-attribute name="title" value="Chi tiết đơn vị"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/unit/detail.jsp" />
+    </definition>
+    <definition name="unit.edit" extends="adm_default">
+        <put-attribute name="title" value="Sửa cộng tác viên"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/unit/edit.jsp" />
+    </definition>
+
+    <definition name="unit.subUnit" extends="adm_default">
+        <put-attribute name="title" value="Quản lý nhóm thuộc đơn vị"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/unit/subUnit.jsp" />
+    </definition>
+
+    <!--Quản lý danh mục cấp bậc cộng tác viên-->
+    <definition name="rank.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách danh mục đơn vị"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/rank/list.jsp" />
+    </definition>
+    <definition name="rank.add" extends="adm_default">
+        <put-attribute name="title" value="Thêm mới danh mục cấp bậc"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/rank/add.jsp" />
+    </definition>
+    <definition name="rank.detail" extends="adm_default">
+        <put-attribute name="title" value="Chi tiết danh mục cấp bậc"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/rank/detail.jsp" />
+    </definition>
+    <definition name="rank.edit" extends="adm_default">
+        <put-attribute name="title" value="Sửa danh mục cấp bậc"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/rank/edit.jsp" />
+    </definition>
+
+    <!--Quản lý cộng tác viên-->
+    <definition name="collaborators.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách cộng tác viên"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/collaborators/list.jsp" />
+    </definition>
+    <definition name="collaborators.add" extends="adm_default">
+        <put-attribute name="title" value="Thêm mới cộng tác viên"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/collaborators/add.jsp" />
+    </definition>
+    <definition name="collaborators.detail" extends="adm_default">
+        <put-attribute name="title" value="Chi tiết cộng tác viên"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/collaborators/detail.jsp" />
+    </definition>
+    <definition name="collaborators.edit" extends="adm_default">
+        <put-attribute name="title" value="Sửa cộng tác viên"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/collaborators/edit.jsp" />
+    </definition>
+    <definition name="collaborators.personalManager" extends="adm_default">
+        <put-attribute name="title" value="Sửa cộng tác viên"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/collaborators/personalManager.jsp" />
+    </definition>
+<!--    <definition name="collaborators.change.pass" extends="adm_default">
+        <put-attribute name="title" value="Đổi mật khẩu"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/user/change.my.pass.jsp" />
+    </definition>-->
+
+    <!--Quản lý thông tin cộng tác viên theo id-->
+    <definition name="collaborators.manageById.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách cộng tác viên"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/collaborators/manageById/list.jsp" />
+    </definition>
+    <definition name="collaborators.manageById.detail" extends="adm_default">
+        <put-attribute name="title" value="Chi tiết cộng tác viên"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/collaborators/manageById/detail.jsp" />
+    </definition>
+
+    <!--End Quản lý thông tin cộng tác viên theo id-->
+
+    <!--Authority-->
+    <definition name="adm_group.list" extends="adm_default">
+        <put-attribute name="title" value="Nhóm quyền"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/group/list.jsp" />
+    </definition>
+    <definition name="adm_group.add" extends="adm_default">
+        <put-attribute name="title" value="Thêm nhóm quyền"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/group/add.jsp" />
+    </definition>
+    <definition name="adm_group.edit" extends="adm_default">
+        <put-attribute name="title" value="Sửa nhóm quyền"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/group/edit.jsp" />
+    </definition>
+    <!--log-->
+    <definition name="adm_log.list" extends="adm_default">
+        <put-attribute name="title" value="Lịch sử hệ thống"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/log/list.jsp" />
+    </definition>
+    <definition name="adm_log.user" extends="adm_default">
+        <put-attribute name="title" value="Lịch sử chi tiết người dùng"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/log/log.user.jsp" />
+    </definition>
+    <definition name="adm_my.history" extends="adm_default">
+        <put-attribute name="title" value="Lịch sử chi tiết người dùng"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/log/my.history.jsp" />
+    </definition>
+
+
+    <!--DANH MỤC HÌNH THỨC BÀI VIẾT-->
+    <definition name="postForm.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách danh mục"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/postForm/list.jsp" />
+    </definition>
+    <definition name="postForm.add" extends="adm_default">
+        <put-attribute name="title" value="Thêm danh mục"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/postForm/add.jsp" />
+    </definition>
+    <definition name="postForm.edit" extends="adm_default">
+        <put-attribute name="title" value="Sửa danh mục"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/postForm/edit.jsp" />
+    </definition>
+    <definition name="postForm.detail" extends="adm_default">
+        <put-attribute name="title" value="Chi tiết danh mục hình thức bài viết"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/detectedForm/detail.jsp" />
+    </definition>
+
+    <!--DANH MỤC HÌNH THỨC PHÁT HIỆN-->
+    <definition name="detectedForm.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách danh mục"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/detectedForm/list.jsp" />
+    </definition>
+    <definition name="detectedForm.add" extends="adm_default">
+        <put-attribute name="title" value="Thêm danh mục"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/detectedForm/add.jsp" />
+    </definition>
+    <definition name="detectedForm.edit" extends="adm_default">
+        <put-attribute name="title" value="Sửa danh mục"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/detectedForm/edit.jsp" />
+    </definition>
+    <definition name="detectedForm.detail" extends="adm_default">
+        <put-attribute name="title" value="Chi tiết danh mục hình thức phát hiện"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/system/detectedForm/detail.jsp" />
+    </definition>
+
+    <!--THỐNG KÊ PHÁT HIỆN BÁO TIN-->
+    <definition name="detectedNewStatistic.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách phát hiện báo tin"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/statistic/detectedNew/list.jsp" />
+    </definition>
+    <definition name="detectedNewStatistic.detail" extends="adm_default">
+        <put-attribute name="title" value="Chi tiết phát hiện báo tin"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/statistic/detectedNew/detail.jsp" />
+    </definition>
+    <!--END-->
+
+    <!--THỐNG KÊ LỆNH TIN-->
+    <definition name="taskStatistic.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách lệnh tin"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/statistic/task/list.jsp" />
+    </definition>
+    <definition name="taskStatistic.detail" extends="adm_default">
+        <put-attribute name="title" value="Chi tiết lệnh tin"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/statistic/task/detail.jsp" />
+    </definition>
+    <!--END-->
+
+    <!--THỐNG KÊ TỪ KHÓA-->
+    <definition name="keywordsStatistic.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách từ khóa nổi bật"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/statistic/keywords/list.jsp" />
+    </definition>
+    <!--END-->
+
+
+    <!--MẠNG XÃ HỘI-->
+    <definition name="social.dashboard" extends="adm_default">
+        <put-attribute name="title" value="Danh sách bài viết"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/socialNetwork/dashboard.jsp" />
+    </definition>
+
+    <definition name="social.fanpage.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách trang"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/socialNetwork/fanpage/list.jsp" />
+    </definition>
+    <definition name="social.fanpage.detail" extends="adm_default">
+        <put-attribute name="title" value="Chi tiết trang mạng xã hội"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/socialNetwork/fanpage/detail.jsp" />
+    </definition>
+    <definition name="social.post.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách bài viết"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/socialNetwork/post/list.jsp" />
+    </definition>
+    <definition name="social.users.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách người dùng"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/socialNetwork/user/list.jsp" />
+    </definition>
+    <definition name="social.users.detail" extends="adm_default">
+        <put-attribute name="title" value="Chi tiết người dùng mạng xã hội"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/socialNetwork/user/detail.jsp" />
+    </definition>
+    <definition name="social.pages.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách trang"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/socialNetwork/fanpage/list.jsp" />
+    </definition>
+
+    <definition name="social.articles.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách bài báo"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/socialNetwork/articles/list.jsp" />
+    </definition>
+
+    <!--Quản lý chủ đề theo dõi mạng xã hội-->
+    <definition name="social.international_topic.list" extends="adm_default">
+        <put-attribute name="title" value="Danh sách chủ đề"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/socialNetwork/internationalTopic/list.jsp" />
+    </definition>
+    <definition name="social.international_topic.add" extends="adm_default">
+        <put-attribute name="title" value="Thêm mới chủ đề"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/socialNetwork/internationalTopic/add.jsp" />
+    </definition>
+    <definition name="social.international_topic.detail" extends="adm_default">
+        <put-attribute name="title" value="Chi tiết chủ đề"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/socialNetwork/internationalTopic/detail.jsp" />
+    </definition>
+    <definition name="social.international_topic.edit" extends="adm_default">
+        <put-attribute name="title" value="chỉnh sửa chủ đề"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/socialNetwork/internationalTopic/edit.jsp" />
+    </definition>
+
+
+  <!--  report freelauncer-->
+    <definition name="report.DailyCollectionByPolyclinic" extends="adm_default">
+        <put-attribute name="title" value="Daily Collection by Polyclinic Report"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/report/DailyCollectionByPolyclinic.jsp" />
+    </definition>
+    <definition name="report.DailyCollectionByKiosks" extends="adm_default">
+        <put-attribute name="title" value="Daily Collection by Kiosks Report"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/report/DailyCollectionByKiosks.jsp" />
+    </definition>
+    <definition name="report.TransactionErrorReport" extends="adm_default">
+        <put-attribute name="title" value="Transaction Error Report"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/report/TransactionErrorReport.jsp" />
+    </definition>
+    <definition name="report.PatientTransactionReport" extends="adm_default">
+        <put-attribute name="title" value="Patient Transaction Report"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/report/PatientTransactionReport.jsp" />
+    </definition>
+    <definition name="report.SPKAuditTrail" extends="adm_default">
+        <put-attribute name="title" value="SPK – Audit Trail"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/report/SPKAuditTrail.jsp" />
+    </definition>
+    <definition name="report.SPKCash" extends="adm_default">
+        <put-attribute name="title" value="SPK – Cash"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/report/SPKCash.jsp" />
+    </definition>
+    <definition name="report.CashEventSummary" extends="adm_default">
+        <put-attribute name="title" value="Cash Event Summary"/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/report/CashEventSummary.jsp" />
+    </definition>
+    <definition name="report.CashCompartment" extends="adm_default">
+        <put-attribute name="title" value="Cash Compartment "/>
+        <put-attribute name="page" value="/WEB-INF/views/admin/report/CashCompartment.jsp" />
+    </definition>
+    <!--  end report freelauncer-->
+
+</tiles-definitions>

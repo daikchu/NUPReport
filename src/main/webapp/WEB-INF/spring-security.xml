@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--CONFIG FOR SPRING SECURITY AUTHEN JWT FOR WEB AND API BOTH-->
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+
+<!--	<beans:bean id="restServicesEntryPoint"
+				class="com.freelauncerelauncer.security.jwt.JwtAuthenticationEntryPoint" />
+
+
+	<beans:bean id="beanCustomFailureHandler" class="com.freelauncerelauncer.security.CustomAuthenticationFailureHandler" />
+
+	<beans:bean id="jwtAuthenticationFilter" class="com.freelauncerelauncer.security.jwt.JwtRequestFilter">
+	</beans:bean>
+
+	<beans:bean id="bcryptEncoder"
+				class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+
+	<global-method-security
+			pre-post-annotations="enabled" secured-annotations="enabled" />
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider user-service-ref="beanUchiUserDetailsService">
+			<password-encoder ref="bcryptEncoder"/>
+		</authentication-provider>
+	</authentication-manager>
+	<beans:bean id="beanUchiUserDetailsService"
+				class="com.freelauncerelauncer.security.SanSimUserDetailsService"  scope="singleton" />
+	<beans:bean id="beanCustomAuthenticationSuccessHandler"
+				class="com.freelauncerelauncer.security.MyAuthenticationSuccessHandler"  scope="singleton" />
+	<beans:bean id="beanMyLogoutSuccessHandler"
+				class="com.freelauncerelauncer.security.MyLogoutSuccessHandler"  scope="singleton" />-->
+
+
+
+
+	<!--<http pattern="/share/huong_dan/**" security="none"/>
+	<http pattern="/login" security="none"/>
+    <http pattern="/public" security="none"/>
+	<http pattern="/forgot-password"  security="none" />
+	<http pattern="/api/system/user/add"  security="none" />
+	<http pattern="/send-pass"  security="none" />
+	<http pattern="/swagger-ui.html" security="none" />
+	<http pattern="/webjars/**" security="none" />
+	<http pattern="/swagger-resources/**" security="none" />
+	<http pattern="/v2/api-docs" security="none" />
+
+	<http pattern="/api/authenticate" security="none"/>
+	<http pattern="/api/send-pass" security="none"/>
+
+	<http pattern="/api/**" auto-config="false" use-expressions="true"
+		create-session="stateless" entry-point-ref="restServicesEntryPoint">
+		<intercept-url pattern="/api/**" access="isAuthenticated()"/>
+		
+		<custom-filter position="FORM_LOGIN_FILTER" ref="jwtAuthenticationFilter"/>
+		&lt;!&ndash;<access-denied-handler ref="customAccessDeniedHandler"/>&ndash;&gt;
+		<csrf disabled="true" />
+	</http>-->
+
+	<!--<http auto-config="true">
+		&lt;!&ndash;<intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')" />&ndash;&gt;
+		<form-login
+		    login-page="/login"
+		    login-processing-url="/j_spring_security_check"
+		    default-target-url="/"
+			always-use-default-target="true"
+			authentication-failure-url="/login?error"
+			username-parameter="username"
+			password-parameter="password"
+			authentication-failure-handler-ref="beanCustomFailureHandler"
+			authentication-success-handler-ref="beanCustomAuthenticationSuccessHandler"/>
+		<logout logout-url="/j_spring_security_logout"
+			delete-cookies="JSESSIONID"
+				invalidate-session="true" success-handler-ref="beanMyLogoutSuccessHandler" /> &lt;!&ndash;logout-success-url="/logout"&ndash;&gt;
+		<csrf disabled="true"/>
+		<remember-me
+				token-validity-seconds="864000"
+				remember-me-parameter="remember-me"
+				remember-me-cookie="remember-me"/>
+	</http>-->
+
+	
+</beans:beans>
+		<!--END CONFIG FOR SPRING SECURITY AUTHEN JWT FOR WEB AND API BOTH-->

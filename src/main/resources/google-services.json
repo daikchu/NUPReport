@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "368426349110",
+    "firebase_url": "https://ism-danang.firebaseio.com",
+    "project_id": "ism-danang",
+    "storage_bucket": "ism-danang.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368426349110:android:d2aba6a6ad66decf6f1e97",
+        "android_client_info": {
+          "package_name": "com.osp.ism"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368426349110-0ulkc7i95u7ep52ur7i8tdg5nsn5b2rf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.osp.ism",
+            "certificate_hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+          }
+        },
+        {
+          "client_id": "368426349110-abjj5iekq2u5rtsfpo0u4k06mkklqb26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgeR80-BORSkz1WXRA2x0jHgKLAVRj8Yo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368426349110-abjj5iekq2u5rtsfpo0u4k06mkklqb26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
