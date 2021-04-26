@@ -268,7 +268,7 @@
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.4</version>
+			<version>2.7</version>
 		</dependency>
 
 		<!-- spring web 4.3.10 yeu cau 1.2.7 hoac 2.9.0. Trong khi struts thi mac dinh down ve 2.8.2 nhung tuong thich dc 2.9.0, de log4j trc struts2 thi struts2 ko down 2.8.2 ve nua -->
@@ -381,7 +381,7 @@
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.5</version>
+			<version>2.7</version>
 		</dependency>
 		<!--CKFinder end -->
 		<dependency>
