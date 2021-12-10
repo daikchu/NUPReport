@@ -25,7 +25,7 @@
 		<hibernate.version>5.2.7.Final</hibernate.version>
 		<mysqlconnector.version>6.0.5</mysqlconnector.version>
 		<tiles.version>3.0.8</tiles.version>
-		<log4j.version>2.9.0</log4j.version>
+		<log4j.version>2.15.0</log4j.version>
 		<!--giup project ko bi compiler mac dinh ve 1.5-->
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
