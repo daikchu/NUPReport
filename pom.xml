@@ -22,7 +22,7 @@
 		<spring.version>5.0.2.RELEASE</spring.version>
 		<spring.security.version>5.0.2.RELEASE</spring.security.version>
 		<jstl.version>1.2</jstl.version>
-		<hibernate.version>5.2.7.Final</hibernate.version>
+		<hibernate.version>5.4.24.Final</hibernate.version>
 		<mysqlconnector.version>6.0.5</mysqlconnector.version>
 		<tiles.version>3.0.8</tiles.version>
 		<log4j.version>2.9.0</log4j.version>
